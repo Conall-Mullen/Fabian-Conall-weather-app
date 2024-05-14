@@ -5,9 +5,12 @@ import "./App.css";
 import { Form } from "./components/Form.jsx";
 
 function App() {
+  const [activities, setActivities] = useState({});
+
   function handleAddActivity(newActivity) {
-    console.log(newActivity);
+    setActivities(newActivity);
   }
+  console.log(activities);
   return <Form onAddActivity={handleAddActivity} />;
 }
 
