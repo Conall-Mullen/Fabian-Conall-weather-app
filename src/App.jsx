@@ -5,7 +5,10 @@ import "./App.css";
 import { Form } from "./components/Form.jsx";
 
 function App() {
-  return <Form />;
+  function handleAddActivity(newActivity) {
+    console.log(newActivity);
+  }
+  return <Form onAddActivity={handleAddActivity} />;
 }
 
 export default App;
