@@ -1,17 +1,22 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { Form } from "./components/Form.jsx";
+import { List } from "./components/List.jsx";
 
 function App() {
-  const [activities, setActivities] = useState({});
+  const [activities, setActivities] = useState([]);
 
   function handleAddActivity(newActivity) {
-    setActivities(newActivity);
+    setActivities([...activities, newActivity]);
   }
+
   console.log(activities);
-  return <Form onAddActivity={handleAddActivity} />;
+  return (
+    <>
+      <Form onAddActivity={handleAddActivity} />
+      <List />
+    </>
+  );
 }
 
 export default App;
