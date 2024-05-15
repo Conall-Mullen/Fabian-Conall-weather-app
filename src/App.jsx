@@ -15,19 +15,15 @@ function App() {
     setActivities([...activities, newActivity]);
   }
 
-  function handleGoodWeather() {
-    setActivities(
-      activities.filter(
-        (activity) => activity.isForGoodWeather === isGoodWeather
-      )
-    );
-    // console.log(activities);
-  }
-  handleGoodWeather();
+  const filteredActivities = activities.filter(
+    (activity) => activity.isForGoodWeather === isGoodWeather
+  );
+
+  // handleGoodWeather();
   return (
     <>
       <Form onAddActivity={handleAddActivity} />
-      <List activities={activities} onGoodWeather={handleGoodWeather} />
+      <List filteredActivities={filteredActivities} />
     </>
   );
 }

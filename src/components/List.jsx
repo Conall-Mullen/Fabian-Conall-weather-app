@@ -1,8 +1,8 @@
-export function List({ activities, onGoodWeather }) {
-  console.log(activities);
+export function List({ filteredActivities }) {
+  console.log(filteredActivities);
   return (
     <ul>
-      {activities.map((activity) => (
+      {filteredActivities.map((activity) => (
         <li key={activity.id}>{activity.name}</li>
       ))}
     </ul>
