@@ -1,6 +1,4 @@
-import useLocalStorageState from "use-local-storage-state";
-
-export function List({ activities }) {
+export function List({ activities, onGoodWeather }) {
   console.log(activities);
   return (
     <ul>
@@ -11,4 +9,7 @@ export function List({ activities }) {
   );
 }
 
-//
+// pass prop isGoodWeather
+// if activity.isGoodWeather === true
+// render list of good weather activities
+// else render the rest

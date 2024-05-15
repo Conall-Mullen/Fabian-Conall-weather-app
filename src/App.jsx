@@ -5,6 +5,8 @@ import { List } from "./components/List.jsx";
 import useLocalStorageState from "use-local-storage-state";
 
 function App() {
+  const isGoodWeather = true;
+
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
   });
@@ -13,11 +15,19 @@ function App() {
     setActivities([...activities, newActivity]);
   }
 
-  console.log("activities", activities);
+  function handleGoodWeather() {
+    setActivities(
+      activities.filter(
+        (activity) => activity.isForGoodWeather === isGoodWeather
+      )
+    );
+    // console.log(activities);
+  }
+  handleGoodWeather();
   return (
     <>
       <Form onAddActivity={handleAddActivity} />
-      <List activities={activities} />
+      <List activities={activities} onGoodWeather={handleGoodWeather} />
     </>
   );
 }
