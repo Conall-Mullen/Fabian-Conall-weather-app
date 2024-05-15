@@ -1,0 +1,27 @@
+.name-input {
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 10px;
+  margin: 10px;
+  width: 500px;
+}
+
+.is-good-weather-input {
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.button-element {
+  background-color: white;
+  color: black;
+  font-weight: 350;
+}
+
+.button-element:hover {
+  background-color: white;
+  color: #ffaa64;
+  font-weight: 600;
+  transition: font-weight 250ms;
+}

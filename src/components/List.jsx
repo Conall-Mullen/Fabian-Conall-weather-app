@@ -1,11 +1,18 @@
+import "./List.css";
+
 export function List({ filteredActivities, onDeleteActivity }) {
   console.log(filteredActivities);
   return (
-    <ul>
+    <ul className="list">
       {filteredActivities.map((activity) => (
-        <li key={activity.id}>
+        <li key={activity.id} className="list-element">
           {activity.name}
-          <button onClick={() => onDeleteActivity(activity.id)}>x</button>
+          <button
+            className="delete-button"
+            onClick={() => onDeleteActivity(activity.id)}
+          >
+            X
+          </button>
         </li>
       ))}
     </ul>

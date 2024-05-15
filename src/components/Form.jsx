@@ -1,4 +1,5 @@
 import { uid } from "uid";
+import "./Form.css";
 
 export function Form({ onAddActivity }) {
   function handleSubmit(event) {
@@ -15,20 +16,26 @@ export function Form({ onAddActivity }) {
   }
 
   return (
-    <>
+    <div>
       <h2>Add new Activity</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name: </label>
-        <input name="name" id="name" type="text" /> <br />
-        <label htmlFor="is-good-weather">Good-weather activity</label>
-        <input
-          name="is-good-weather"
-          type="checkbox"
-          id="is-good-weather"
-        />{" "}
-        <br />
-        <button type="submit">Submit</button>
+        <div className="name-input">
+          <label htmlFor="name">Name: </label>
+          <input name="name" id="name" type="text" />{" "}
+        </div>
+        <div className="is-good-weather-input">
+          <label htmlFor="is-good-weather">Good-weather activity</label>
+          <input
+            name="is-good-weather"
+            type="checkbox"
+            id="is-good-weather"
+          />{" "}
+        </div>
+
+        <button className="button-element" type="submit">
+          Submit
+        </button>
       </form>
-    </>
+    </div>
   );
 }

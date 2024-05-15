@@ -37,7 +37,7 @@ function App() {
   );
 
   return (
-    <>
+    <div className="app">
       <h1>{weatherData.condition}</h1>
       <h2>{weatherData.temperature}°C</h2>
       <Form onAddActivity={handleAddActivity} />
@@ -45,7 +45,7 @@ function App() {
         filteredActivities={filteredActivities}
         onDeleteActivity={handleDeleteActivity}
       />
-    </>
+    </div>
   );
 }
 
