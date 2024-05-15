@@ -1,17 +1,32 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+// import { useState } from "react";
 import "./App.css";
 import { Form } from "./components/Form.jsx";
+import { List } from "./components/List.jsx";
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [activities, setActivities] = useState({});
+  const URL =
+    "https://example-apis-qays8irhv-neuefische.vercel.app/api/weather";
+  const isGoodWeather = true;
+  const [activities, setActivities] = useLocalStorageState("activities", {
+    defaultValue: [],
+  });
 
   function handleAddActivity(newActivity) {
-    setActivities(newActivity);
+    setActivities([...activities, newActivity]);
   }
-  console.log(activities);
-  return <Form onAddActivity={handleAddActivity} />;
+
+  const filteredActivities = activities.filter(
+    (activity) => activity.isForGoodWeather === isGoodWeather
+  );
+
+  // handleGoodWeather();
+  return (
+    <>
+      <Form onAddActivity={handleAddActivity} />
+      <List filteredActivities={filteredActivities} />
+    </>
+  );
 }
 
 export default App;

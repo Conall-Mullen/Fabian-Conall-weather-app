@@ -1,14 +1,10 @@
-// eslint-disable-next-line react/prop-types
 import { uid } from "uid";
 
 export function Form({ onAddActivity }) {
-  //
-  //   const [checkbox, setCheckbox] = useState(false);
-
   function handleSubmit(event) {
     event.preventDefault();
     const formElements = event.target.elements;
-    console.log(formElements);
+
     onAddActivity({
       name: formElements.name.value,
       isForGoodWeather: formElements["is-good-weather"].checked,
@@ -16,7 +12,6 @@ export function Form({ onAddActivity }) {
     });
     event.target.reset();
     event.target.name.focus();
-    // console.log(event.target.value);
   }
 
   return (
