@@ -8,7 +8,6 @@ function App() {
   const URL =
     "https://example-apis-qays8irhv-neuefische.vercel.app/api/weather";
 
-  // const isGoodWeather = true;
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
   });
@@ -27,17 +26,25 @@ function App() {
     setActivities([...activities, newActivity]);
   }
 
+  function handleDeleteActivity(activityToDelete) {
+    setActivities(
+      activities.filter((activity) => activity.id != activityToDelete)
+    );
+  }
+
   const filteredActivities = activities.filter(
     (activity) => activity.isForGoodWeather === weatherData.isGoodWeather
   );
 
-  // handleGoodWeather();
   return (
     <>
       <h1>{weatherData.condition}</h1>
       <h2>{weatherData.temperature}°C</h2>
       <Form onAddActivity={handleAddActivity} />
-      <List filteredActivities={filteredActivities} />
+      <List
+        filteredActivities={filteredActivities}
+        onDeleteActivity={handleDeleteActivity}
+      />
     </>
   );
 }
