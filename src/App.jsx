@@ -5,8 +5,9 @@ import { List } from "./components/List.jsx";
 import useLocalStorageState from "use-local-storage-state";
 
 function App() {
+  const URL =
+    "https://example-apis-qays8irhv-neuefische.vercel.app/api/weather";
   const isGoodWeather = true;
-
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
   });
