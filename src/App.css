@@ -8,4 +8,23 @@
 .app {
   display: flex;
   flex-direction: column;
+  padding: 19em;
+  border-radius: 55px;
+}
+
+.good-weather {
+  background-image: url("https://st.depositphotos.com/1033604/4138/i/450/depositphotos_41382795-stock-photo-idyllic-meadow-at-nice-weather.jpg");
+  background-size: 2400px;
+  display: flex;
+  flex-direction: column;
+  padding: 19em;
+  border-radius: 55px;
+}
+
+.bad-weather {
+  background-image: url("https://images.pexels.com/photos/2418664/pexels-photo-2418664.jpeg?cs=srgb&dl=pexels-greg-1251451-2418664.jpg&fm=jpg");
+  display: flex;
+  flex-direction: column;
+  padding: 19em;
+  border-radius: 55px;
 }

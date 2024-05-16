@@ -32,7 +32,7 @@ export function Form({ onAddActivity }) {
           />{" "}
         </div>
 
-        <button className="button-element" type="submit">
+        <button className="submit_button-element" type="submit">
           Submit
         </button>
       </form>
