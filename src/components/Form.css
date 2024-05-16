@@ -1,0 +1,29 @@
+.name-input {
+  padding: 1em;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 10px;
+  width: 500px;
+}
+
+.is-good-weather-input {
+  padding: 1em;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.submit_button-element {
+  background-color: white;
+  color: black;
+  font-weight: 350;
+  border: 1px solid white;
+}
+
+.submit_button-element:hover {
+  background-color: white;
+
+  font-weight: 600;
+  transition: font-weight 250ms;
+  border-color: #ffaa64;
+}

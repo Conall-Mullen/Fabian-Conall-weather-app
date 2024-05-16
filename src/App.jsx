@@ -20,6 +20,8 @@ function App() {
       setWeatherData(data);
     }
     startFetching();
+    const interval = setInterval(startFetching, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   function handleAddActivity(newActivity) {
@@ -37,7 +39,7 @@ function App() {
   );
 
   return (
-    <>
+    <div className={weatherData.isGoodWeather ? "good-weather" : "bad-weather"}>
       <h1>{weatherData.condition}</h1>
       <h2>{weatherData.temperature}°C</h2>
       <Form onAddActivity={handleAddActivity} />
@@ -45,7 +47,7 @@ function App() {
         filteredActivities={filteredActivities}
         onDeleteActivity={handleDeleteActivity}
       />
-    </>
+    </div>
   );
 }
 
